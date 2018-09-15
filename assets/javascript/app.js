@@ -179,25 +179,25 @@ function showQuestions() {
 function createQuestions(question, key) {
     var block = $("<div class='question' name='" + key + "'>" + question.question + "" +
         "<ul>" +
-        "<li><input type='radio' id='" + key + "' value='A'><label>" + question.A + "</label></li>" +
-        "<li><input type='radio' id='" + key + "' value='B'><label>" + question.B + "</label></li>" +
-        "<li><input type='radio' id='" + key + "' value='C'><label>" + question.C + "</label></li>" +
-        "<li><input type='radio' id='" + key + "' value='D'><label>" + question.D + "</label></li>" +
+        "<li><input type='radio' name='" + key + "' value='A'><label>" + question.A + "</label></li>" +
+        "<li><input type='radio' name='" + key + "' value='B'><label>" + question.B + "</label></li>" +
+        "<li><input type='radio' name='" + key + "' value='C'><label>" + question.C + "</label></li>" +
+        "<li><input type='radio' name='" + key + "' value='D'><label>" + question.D + "</label></li>" +
         "</ul>");
 
     return block;
 }
 
 function score() {
-    console.log($("input:radio[id='q0']:checked").val());
-    let playeranswers = [$("input:radio[id='q0']:checked").val(),
-        $("input:radio[id='q1']:checked").val(),
-        $("input:radio[id='q2']:checked").val(),
-        $("input:radio[id='q3']:checked").val(),
-        $("input:radio[id='q4']:checked").val(),
-        $("input:radio[id='q5']:checked").val(),
-        $("input:radio[id='q6']:checked").val(),
-        $("input:radio[id='q7']:checked").val()];
+    console.log($("input:radio[name='q0']:checked").val());
+    let playeranswers = [$("input:radio[name='q0']:checked").val(),
+        $("input:radio[name='q1']:checked").val(),
+        $("input:radio[name='q2']:checked").val(),
+        $("input:radio[name='q3']:checked").val(),
+        $("input:radio[name='q4']:checked").val(),
+        $("input:radio[name='q5']:checked").val(),
+        $("input:radio[name='q6']:checked").val(),
+        $("input:radio[name='q7']:checked").val()];
 
     console.log(playeranswers);
     console.log(answers);
