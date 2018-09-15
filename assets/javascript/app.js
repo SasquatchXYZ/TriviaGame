@@ -2,6 +2,7 @@ let questionslist = {};
 let trivia = {};
 
 let questions;
+/*let playeranswers;*/
 let answers = ["B","D","A","B","D","A","B","D"];
 
 let intervalID;
@@ -27,7 +28,7 @@ let intervalID;
                 $("#timer-display").text("Time's Up!");
                 clearInterval(intervalID);
                 $(".done").hide();
-                $(".question-block").empty();
+                $(".question-block").hide();
                 /*$(".question-block").empty();*/
                 score();
                 $(".results, .reset").show();
@@ -67,10 +68,12 @@ let intervalID;
 // Question Object =====================================================================================================
 
 function startTrivia() {
+    /*playeranswers = [];*/
     questionslist = resetQuestions();
     trivia = resetTrivia();
 
     showQuestions();
+
 
 }
 
@@ -158,7 +161,7 @@ function showQuestions() {
         var questiontitle = questions[i];
         var question = questionslist[questiontitle];
         var questionblocks = createQuestions(question, questiontitle);
-        $(".question-block").append(questionblocks)
+        $(".question-block").append(questionblocks).show();
     }
 }
 
@@ -242,15 +245,14 @@ $(document).ready(function() {
     });
 
     $(".done").on("click", function() {
-        $(".done").hide();
-        $(".question-block").empty();
-        timer.reset();
         score();
+        $(".done, .question-block").hide();
+        timer.reset();
         $(".results, .reset").show();
     });
 
     $(".reset").on("click", function () {
-        resetTrivia();
+        $(".question-block").empty();
         $(".start").show();
 /*        $(".question-block").empty();*/
         $(".reset, .results").hide();
