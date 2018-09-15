@@ -14,8 +14,25 @@ h1{
 .start{
 
 }
+.question-block {
+    width: 960px;
+    text-align: left;
+}
 
+.question{
+margin: 10px auto;
+}
 
+.ul {
+    list-style: none;
+}
+
+.done {
+    display: none;
+}
+.results {
+    display: none;
+}
 
 .reset {
     display: none;
