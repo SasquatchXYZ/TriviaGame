@@ -16,7 +16,7 @@ body {
     margin: 0 auto;
 }
 
-h1{
+h1 {
     font-size: 2.5em;
     color: cyan;
     text-decoration: underline;
@@ -31,7 +31,7 @@ h1{
     font-size: 20px;
 }
 
-.start{
+.start {
     color: cyan;
     background-color: darkcyan;
     border: 2px outset cyan;
@@ -48,8 +48,8 @@ h1{
     padding: 10px;
 }
 
-.question{
-margin: 10px auto;
+.question {
+    margin: 10px auto;
 }
 
 .ul {

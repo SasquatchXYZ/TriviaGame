@@ -1,13 +1,15 @@
-# TriviaGame
-Unit 5 Trivia Game - Basic Option of the Unit5/jQuery Homework - A simple interactive trivia game that runs in the web browser.
+# Trivia Game - Star Wars
+##### Homework Assignment 5: Basic Quiz - Timed Form
+
+This is a fun and interactive trivia game that runs in your web browser, it is the Basic Version of the Unit 5 Homework covering JavaScript & jQuery.  (The Advanced assignment can be found on my [Portfolio](https://sasquatchxyz.github.io/Basic-Portfolio/)).  The game was styled with Basic CSS (no templates), simply so that I could expand my practice.  I started with the Star Wars theme simply because I always have random trivia about the Original Star Wars Extended Universe bouncing around in my head, and I actually had a list of questions I had previously been planning to use in a class activity, so I just updated those to make it multiple choice.  It was coded in such a way that I can easily change the questions or add more to the list.
 
 ## Getting Started
 
-This is a fun and interactive trivia game that runs in your web browser.  I simply started with the Star Wars theme, because I always have random trivia about the Original Star Wars Extended Universe bouncing around in my head, and I actually had a list of questions I had previously been planning to us on an in class activity, so I just updated those to make it multiple choice.  It was coded in such a way that I can easily change the questions or add more to the list.
+* [Trivia Game](https://sasquatchxyz.github.io/TriviaGame/) - Deployed Version of the Site can be viewed here.
 
 ### Prerequisites
 
-The only thing you need to enjoy the fun of the game is a web browser.
+The only thing you need to enjoy the fun of the game is a web browser.  To view/manipulate the code you need a TextEditor or IDE.
 
 ```
 Web Browser - Google Chrome Preferred

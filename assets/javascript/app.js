@@ -2,66 +2,66 @@ let questionslist = {};
 let trivia = {};
 
 let questions;
-let answers = ["B","D","A","B","D","A","B","D"];
+let answers = ["B", "D", "A", "B", "D", "A", "B", "D"];
 
 let intervalID;
 
 // Timer Object ========================================================================================================
-     timer = {
+timer = {
 
-        time: 120,
+    time: 120,
 
-        start: function () {
-            $("#timer-display").text("02:00");
-            intervalID = setInterval(timer.countdown, 1000);
-        },
+    start: function () {
+        $("#timer-display").text("02:00");
+        intervalID = setInterval(timer.countdown, 1000);
+    },
 
-        countdown: function () {
-            /*console.log("countdown");*/
-            timer.time--;
-            let currentTime = timer.timeConverter(timer.time);
-            /*console.log(currentTime);*/
-            $("#timer-display").text(currentTime);
+    countdown: function () {
+        /*console.log("countdown");*/
+        timer.time--;
+        let currentTime = timer.timeConverter(timer.time);
+        /*console.log(currentTime);*/
+        $("#timer-display").text(currentTime);
 
-            if (timer.time === 0) {
-                $("#timer-display").text("Time's Up!");
-                clearInterval(intervalID);
-                $(".done, .question-block").hide();
-                /*$(".question-block").hide();*/
-                score();
-                $(".results, .reset").show();
-            } else {
-
-            }
-        },
-
-        reset: function () {
-            timer.time = 120;
-            $("#timer-display").text("02:00");
+        if (timer.time === 0) {
+            $("#timer-display").text("Time's Up!");
             clearInterval(intervalID);
-            /*console.log("Reset");*/
-        },
+            $(".done, .question-block").hide();
+            /*$(".question-block").hide();*/
+            score();
+            $(".results, .reset").show();
+        } else {
 
-        timeConverter: function (t) {
-            let minutes = Math.floor(t / 60);
-            let seconds = t - (minutes * 60);
+        }
+    },
 
-            if (seconds < 10) {
-                seconds = "0" + seconds;
-            }
+    reset: function () {
+        timer.time = 120;
+        $("#timer-display").text("02:00");
+        clearInterval(intervalID);
+        /*console.log("Reset");*/
+    },
 
-            if (minutes === 0) {
-                minutes = "00";
-            }
+    timeConverter: function (t) {
+        let minutes = Math.floor(t / 60);
+        let seconds = t - (minutes * 60);
 
-            else if (minutes < 10) {
-                minutes = "0" + minutes;
-            }
+        if (seconds < 10) {
+            seconds = "0" + seconds;
+        }
 
-            return minutes + ":" + seconds;
-        },
+        if (minutes === 0) {
+            minutes = "00";
+        }
 
-    };
+        else if (minutes < 10) {
+            minutes = "0" + minutes;
+        }
+
+        return minutes + ":" + seconds;
+    },
+
+};
 
 // Question Object =====================================================================================================
 
@@ -83,68 +83,68 @@ function resetTrivia() {
 
 function resetQuestions() {
     return {
-        q0 : {
-            question : "What race is Chewbacca?",
-            A : "Mon Calamari",
-            B : "Wookie",
-            C : "Jawa",
-            D : "Bantha",
+        q0: {
+            question: "What race is Chewbacca?",
+            A: "Mon Calamari",
+            B: "Wookie",
+            C: "Jawa",
+            D: "Bantha",
         },
-        q1 : {
-            question : "What give's lightsabers their color?",
-            A : "The owner's energy.",
-            B : "The planet it was made on.",
-            C : "The owner's age.",
-            D : "The crystals used to make them.",
+        q1: {
+            question: "What give's lightsabers their color?",
+            A: "The owner's energy.",
+            B: "The planet it was made on.",
+            C: "The owner's age.",
+            D: "The crystals used to make them.",
         },
-        q2 : {
-            question : "What is the name of the snow planet in Episode V?",
-            A : "Hoth",
-            B : "Endor",
-            C : "Alderaan",
-            D : "Naboo",
+        q2: {
+            question: "What is the name of the snow planet in Episode V?",
+            A: "Hoth",
+            B: "Endor",
+            C: "Alderaan",
+            D: "Naboo",
         },
-        q3 : {
-            question : "What is the name of the only Super Star Destroyer see in the films, Darth Vader's flagship?",
-            A : "Devastator",
-            B : "Executor",
-            C : "Dominator",
-            D : "Lusankya",
+        q3: {
+            question: "What is the name of the only Super Star Destroyer see in the films, Darth Vader's flagship?",
+            A: "Devastator",
+            B: "Executor",
+            C: "Dominator",
+            D: "Lusankya",
         },
-        q4 : {
-            question : "How did Han Solo acquire the Millenium Falcon?",
-            A : "Stole it.",
-            B : "Won it in a raffle.",
-            C : "Bought it.",
-            D : "Won it in a Sabacc game.",
+        q4: {
+            question: "How did Han Solo acquire the Millenium Falcon?",
+            A: "Stole it.",
+            B: "Won it in a raffle.",
+            C: "Bought it.",
+            D: "Won it in a Sabacc game.",
         },
-        q5 : {
-            question : "What was Luke's call sign in Episode IV?",
-            A : "Red Five",
-            B : "Big Red",
-            C : "Rogue Five",
-            D : "Epic One",
+        q5: {
+            question: "What was Luke's call sign in Episode IV?",
+            A: "Red Five",
+            B: "Big Red",
+            C: "Rogue Five",
+            D: "Epic One",
         },
-        q6 : {
-            question : "What system can Cloud City can be found in?",
-            A : "Lando",
-            B : "Bespin",
-            C : "Dagobah",
-            D : "Corellia",
+        q6: {
+            question: "What system can Cloud City can be found in?",
+            A: "Lando",
+            B: "Bespin",
+            C: "Dagobah",
+            D: "Corellia",
         },
-        q7 : {
-            question : "Who is the bounty hunter who finally delivers Han to Jabba?",
-            A : "Bossk",
-            B : "Zuckuss",
-            C : "Dengar",
-            D : "Boba Fett",
+        q7: {
+            question: "Who is the bounty hunter who finally delivers Han to Jabba?",
+            A: "Bossk",
+            B: "Zuckuss",
+            C: "Dengar",
+            D: "Boba Fett",
         }
     }
 }
 
 function showQuestions() {
     questions = Object.keys(questionslist);
-    for (var i = 0; i < questions.length; i++ ){
+    for (var i = 0; i < questions.length; i++) {
         var questiontitle = questions[i];
         var question = questionslist[questiontitle];
         var questionblocks = createQuestions(question, questiontitle);
@@ -200,9 +200,9 @@ function score() {
 
 // Question Time =======================================================================================================
 
-$(document).ready(function() {
+$(document).ready(function () {
 
-    $(".start").on("click", function() {
+    $(".start").on("click", function () {
         $(".start").hide();
         startTrivia();
         timer.start();
@@ -210,7 +210,7 @@ $(document).ready(function() {
 
     });
 
-    $(".done").on("click", function() {
+    $(".done").on("click", function () {
         score();
         $(".done, .question-block").hide();
         timer.reset();
